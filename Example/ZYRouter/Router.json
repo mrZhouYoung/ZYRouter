@@ -1,0 +1,122 @@
+{
+    "taskClass": "ViewControllerTask",
+    "subRoutes": {
+        "/user-status": {
+            "taskOptions": {
+                "controllerClass": "InterceptorManageViewController"
+            }
+        },
+        "/login": {
+            "taskOptions": {
+                "controllerClass": "LoginViewController",
+                "present": "1",
+                "wrap": "NavigationController"
+            }
+        },
+        "/interceptorA": {
+            "taskOptions": {
+                "controllerClass": "InterceptorAViewController"
+            }
+        },
+        "/interceptorB": {
+            "taskOptions": {
+                "controllerClass": "InterceptorBViewController"
+            }
+        },
+        "/interceptorC": {
+            "interceptors": "LoginInterceptor",
+            "taskOptions": {
+                "controllerClass": "InterceptorCViewController"
+            }
+        },
+        "/interceptorC2": {
+            "interceptors": "LoginInterceptor",
+            "taskOptions": {
+                "controllerClass": "InterceptorC2ViewController"
+            }
+        },
+        "/present": {
+            "taskOptions": {
+                "controllerClass": "PresentViewController",
+                "present": "1",
+                "wrap": "NavigationController"
+            }
+        },
+        "/push": {
+            "taskClass": "ViewControllerTask",
+            "taskOptions": "PushViewController"
+        },
+        "/home": {
+            "taskClass": "TabBarControllerTask",
+            "taskOptions": "HomeViewController"
+        },
+        
+        "/nearby": {
+            "taskClass": "TabBarControllerTask",
+            "taskOptions": "NearbyViewController"
+        },
+        "/product": {
+            "/list?type=A": {
+                "taskClass": "ViewControllerTask",
+                "taskOptions": {
+                    "controllerClass": "ProductListAViewController"
+                }
+            },
+            "/list?type=B": {
+                "taskClass": "ViewControllerTask",
+                "taskOptions": {
+                    "controllerClass": "ProductListBViewController"
+                }
+            },
+            "/list": {
+                "redirect": "/nearby"
+            }
+        },
+        "/discovery": {
+            "taskClass": "TabBarControllerTask",
+            "taskOptions": {
+                "controllerClass": "DiscoveryViewController"
+            }
+        },
+        "/user": {
+            "interceptors": "LoginInterceptor",
+            "/orders": {
+                "taskClass": "TabBarControllerTask",
+                "taskOptions": {
+                    "controllerClass": "OrdersViewController"
+                }
+            },
+            "/mine": {
+                "taskClass": "TabBarControllerTask",
+                "taskOptions": {
+                    "controllerClass": "MineViewController"
+                }
+            }
+        },
+        "/detail": {
+            "subRoutes": {
+                          "/:code" : {
+                          "taskOptions": {
+                          "controllerClass": "DetailViewController"
+                          }
+                          }
+            }
+        },
+        "/buy": {
+            "interceptors": ["InterceptorC",{
+                             "interceptorClass": "InterceptorA",
+                             "interceptorOptions": {
+                             "risk": 2
+                             }
+                             }],
+            "taskOptions": {
+                "controllerClass": "BuyViewController"
+            }
+        },
+        "/404": {
+            "taskOptions": {
+                "controllerClass": "Page404ViewController"
+            }
+        }
+    }
+}

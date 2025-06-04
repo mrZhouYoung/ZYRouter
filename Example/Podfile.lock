@@ -1,0 +1,16 @@
+PODS:
+  - ZYRouter (0.1.0)
+
+DEPENDENCIES:
+  - ZYRouter (from `../`)
+
+EXTERNAL SOURCES:
+  ZYRouter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZYRouter: 42d569ef45090e9394479b4ee44e971b4b43aa24
+
+PODFILE CHECKSUM: 91044dd002e874c565109699afd400e492e8ae09
+
+COCOAPODS: 1.16.2

@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'ZYRouter_Example' do
+  pod 'ZYRouter', :path => '../'
+
+  target 'ZYRouter_Tests' do
+    inherit! :search_paths
+
+  end
+end
